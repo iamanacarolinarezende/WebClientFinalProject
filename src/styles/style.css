@@ -1,0 +1,17 @@
+:root{
+    --primary-color: white;
+    --secondary-color: blue;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+}

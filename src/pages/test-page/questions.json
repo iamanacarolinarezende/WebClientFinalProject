@@ -1,0 +1,247 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "text": "When I make decisions:",
+        "options": [
+          {
+            "id": "a",
+            "text": "I do it quickly and go with the first impressions."
+          },
+          {
+            "id": "b",
+            "text": "I think about it, consider the options and then decide."
+          },
+          {
+            "id": "c",
+            "text": "I listen to my feelings and consider how my decisions will affect others."
+          },
+          {
+            "id": "d",
+            "text": "I take it seriously and always try to make the right decision."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "The best way for others to show me they care about me is to:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Do fun things with me."
+          },
+          {
+            "id": "b",
+            "text": "Give me space to be myself."
+          },
+          {
+            "id": "c",
+            "text": "Spend time with me doing whatever."
+          },
+          {
+            "id": "d",
+            "text": "Do what I want to do; not let me down or go back on their word."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "When I’m with my friends, I like to provide:",
+        "options": [
+          {
+            "id": "a",
+            "text": "The excitement; the fun; the jokes."
+          },
+          {
+            "id": "b",
+            "text": "Questions; answers; a logical way of looking at things."
+          },
+          {
+            "id": "c",
+            "text": "Concern for others; a lot of caring."
+          },
+          {
+            "id": "d",
+            "text": "The planning; a sense of security; a good standard."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "text": "I like to:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Act on a moment’s notice; do risky things."
+          },
+          {
+            "id": "b",
+            "text": "Provide answers or give thought to people’s questions."
+          },
+          {
+            "id": "c",
+            "text": "Help maintain a sense of harmony and togetherness."
+          },
+          {
+            "id": "d",
+            "text": "Be responsible, dependable, and helpful to others."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "One thing I am really good at is:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Acting courageously."
+          },
+          {
+            "id": "b",
+            "text": "Thinking."
+          },
+          {
+            "id": "c",
+            "text": "Being sensitive."
+          },
+          {
+            "id": "d",
+            "text": "Organizing."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "text": "Friends who know me best would say that I am:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Competitive."
+          },
+          {
+            "id": "b",
+            "text": "Reserved, thoughtful."
+          },
+          {
+            "id": "c",
+            "text": "Emotional, friendly."
+          },
+          {
+            "id": "d",
+            "text": "Neat, prepared."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "text": "My basic approach to life is:",
+        "options": [
+          {
+            "id": "a",
+            "text": "To take one day at a time and have fun."
+          },
+          {
+            "id": "b",
+            "text": "To figure out what life is all about."
+          },
+          {
+            "id": "c",
+            "text": "To help others and be happy and succeed."
+          },
+          {
+            "id": "d",
+            "text": "To plan for the future and make it as good as possible."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "text": "When I am feeling discouraged or “down in the dumps”:",
+        "options": [
+          {
+            "id": "a",
+            "text": "I often become rude, mad, or sometimes even mean."
+          },
+          {
+            "id": "b",
+            "text": "I withdraw, don’t talk very much, and try to think my way out of the problem."
+          },
+          {
+            "id": "c",
+            "text": "I feel emotional, am sad, and usually like to talk it over with someone close to me."
+          },
+          {
+            "id": "d",
+            "text": "I try to figure out what’s causing the problem and fix it."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "text": "I feel good about myself when:",
+        "options": [
+          {
+            "id": "a",
+            "text": "I can do things that are difficult."
+          },
+          {
+            "id": "b",
+            "text": "I can solve problems or figure things out."
+          },
+          {
+            "id": "c",
+            "text": "I can help other people."
+          },
+          {
+            "id": "d",
+            "text": "I am appreciated or rewarded for things I do."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "text": "Teachers at school who saw me when I wasn’t on my best behavior might describe me as:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Rowdy or a little wild."
+          },
+          {
+            "id": "b",
+            "text": "Arrogant."
+          },
+          {
+            "id": "c",
+            "text": "Talkative."
+          },
+          {
+            "id": "d",
+            "text": "Someone who wants things my way; dominant; worrying."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "text": "Teachers at school (who like me and in whose class I do pretty well) would probably describe me as:",
+        "options": [
+          {
+            "id": "a",
+            "text": "Charming, a natural leader, clever, someone who is fun to have around."
+          },
+          {
+            "id": "b",
+            "text": "Thoughtful, someone who has good answers, someone who likes to figure out problems."
+          },
+          {
+            "id": "c",
+            "text": "Nice, friendly, someone who gets along with other students and is helpful to the teacher and others."
+          },
+          {
+            "id": "d",
+            "text": "Neat, organized, prepared, someone who does assignments and is a good student."
+          }
+        ]
+      }
+    ]
+  }
+  

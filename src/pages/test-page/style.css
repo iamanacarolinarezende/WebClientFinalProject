@@ -1,0 +1,38 @@
+body, section, form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+section{
+    width: 80%;
+}
+form{
+    width: 100%;
+}
+/*div where the question is*/
+.question{
+    width: 100%;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+/*the question text itself*/
+.question-text{
+    margin: 1vh 1vw;
+}
+/*div where all the answers are in*/
+.answers-options{
+    margin: 1vh 0vw 0vh 1vw ;
+}
+
+/*radio input and the label*/
+.answer-radio-input, .answer-radio-label{
+    margin: 1vh 1vw;
+    flex-direction: row;
+    align-items: flex-start;
+}
+/**/
+.submit-button{
+  padding: 1vh;  
+}
