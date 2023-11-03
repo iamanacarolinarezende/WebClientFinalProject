@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+        </script> 
+
+</head>
+<body>
+    <div class="question-container">
+        <h1>1 - When I make decisions...</h1>
+
+        <div class="oders">
+         <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+         </div>
+         <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+            
+         </div>
+         <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+            
+         </div>
+         <div class="box" ondrop="drop(event)" ondragover="allowDrop(event)">
+            
+         </div>
+        </div>
+
+        <div class="oders" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+            <div class="box" id="answer1" draggable="true" ondragstart="drag(event)">
+                <h3>
+                    ...I do it quickly and go with the first impressions...I do it quickly and go with the first impressions.
+                </h3>
+                
+            </div>
+            <div class="box" id="answer2" draggable="true" ondragstart="drag(event)">
+                <h3>...I think about it, consider the options and then decide.</h3>
+            </div>
+            <div class="box" id="answer3" draggable="true" ondragstart="drag(event)">
+                <h3>...I listen to my feelings and consider how my decisions will affect others.</h3>
+            </div>
+            <div class="box" id="answer4" draggable="true" ondragstart="drag(event)">
+                <h3>...I take it seriously and always try to make the right decision.</h3>
+            </div>
+        </div>
+    </div>
+<style>
+
+.question-container{
+    display: flex;
+    flex-direction: column;
+}
+.answer-container{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+}
+
+.oders{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2vh;
+    width: 100vw;
+}
+.box{
+    border: solid black 2px;
+    width: 18vw;
+    height: 15vh;
+    box-sizing: border-box;
+    margin-right: 1vw;
+}
+</style>
+</body>
+</html>
