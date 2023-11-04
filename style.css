@@ -1,3 +1,24 @@
+/*Colors Variables*/
+:root{
+  --primary-color: #164863;
+  --secundary-color: #9BBEC8;
+  --gold: #D6D46D;
+  --orange: #FF6C22;
+  --green: #A7D397;
+  --blue: #39A7FF;
+}
+/*Reseting CSS*/
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+/*Defining the size of the body to the size of the screen*/
+body{
+  width: 100vw;
+  min-height: 100vh;
+}
 
 .personality { 
     font: 2.2em / 2.5 Helvetica, Helvetica, Arial, sans-serif;

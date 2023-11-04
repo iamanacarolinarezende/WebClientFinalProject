@@ -3,16 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../styles/style.css">
+    <title>Test</title>
+
+    <!--Importing Styles-->
+    <script src="./script.js"></script>    
+    <!--Importing Global Styles-->
+    <link rel="stylesheet" href="../../../style.css">
+    <!--Importing Specific Styles-->   
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+
 </head>
-<body onload="loadQuestions()">
-    <section>
-    <form id="colors-test" action="">
-        
-    </form>
-    </section>
+<body>
+    <!--Question Container-->
+    <div class="question-container">
+        <!--Question Text-->
+        <h1 id="question"></h1>
+        <!--Containers where the user have to drop the order-->
+        <div class="container">
+            <div id="1" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="2" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="3" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="4" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+        <!--Initial container for aswers cards -->
+        <div class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="a" class="box-answer" id="answer1" draggable="true" ondragstart="drag(event)">
+                <!--Asnwer a-->
+            </div>
+            <div id="b" class="box-answer" id="answer2" draggable="true" ondragstart="drag(event)">
+                <!--Asnwer b-->
+            </div>
+            <div id="c" class="box-answer" id="answer3" draggable="true" ondragstart="drag(event)">
+                <!--Asnwer c-->
+            </div>
+            <div id="d" class="box-answer" id="answer4" draggable="true" ondragstart="drag(event)">
+                <!--Asnwer d-->
+            </div>
+        </div>
+        <div class="container">
+            <input class="button" type="button" value="Previous">
+            <input class="button" type="button" value="Next">
+
+        </div>
+    </div>
+
 </body>
 </html>

@@ -1,57 +1,42 @@
+var QUESTIONS;
+var CURRENT_QUESTION = 1;
 
-async function loadQuestions(){
-    fetch('./questions.json')
+//function to load the questions from JSON, save then on Session storage and on QUESTIONS variable
+function loadQuestions(){
+    return fetch('./questions.json')
     .then((response) => response.json())
-    .then(data => createElements(data.questions) )
-    
+    .then(data => QUESTIONS = data) //save the questions on local variable to be easier to access
+    .then(res => JSON.stringify(res))
+    .then(data => sessionStorage.setItem("questions", data)) //also save the questions on to sessionStorage  
+}
+//Call the function to load the Questions
+loadQuestions()
+
+
+function loadNextQuestion(){
+  questionText = QUESTIONS.questions[CURRENT_QUESTION].text
+  document.querySelector("#question").innerHTML = questionText
+  document.querySelector("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
+  document.querySelector("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
+  document.querySelector("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
+  document.querySelector("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
 }
 
-function createElements(data){
-    var form = document.querySelector("#colors-test")
-    data.forEach(element => {
-        let question = `question_${element.id}`
-        //creating the question div
-        let questionDiv = document.createElement("div")
-        questionDiv.className = "question"
-        
-        //creating the question text
-        let questionText = document.createElement("h2")
-        questionText.innerHTML = `${element.id} - ${element.text}`
-        questionText.className = "question-text"
-        questionDiv.appendChild(questionText)
 
-        //creating the answers options
-        let answersDiv = document.createElement("div")
-        answersDiv.className = "answers-options"
-        element.options.forEach(answer => {
-            //creating the answer's label
-            let label = document.createElement("label")
-            label.setAttribute("for", `${question}_answer_${answer.id}`)
-            label.innerHTML = `${answer.id} - ${answer.text}`
-            label.className = "answer-radio-label"
-
-            let radio = document.createElement("input")
-            radio.setAttribute("type", "radio")
-            radio.setAttribute("id", `${question}_answer_${answer.id}`)
-            radio.setAttribute("name", `${question}_answers`)
-            radio.className = "answer-radio-input"
-
-            let blankLine = document.createElement("br")
-
-            answersDiv.appendChild(radio)
-            answersDiv.appendChild(label)
-            answersDiv.appendChild(blankLine)
-        });
-
-        //adding the question to the form
-        questionDiv.appendChild(answersDiv)
-        form.appendChild(questionDiv)
-
-    });
-    //creating the submit button
-    var myButton = document.createElement("input")
-    myButton.setAttribute("type","submit")
-    myButton.setAttribute("value","submit")
-    myButton.className = "submit-button"
-    form.appendChild(myButton)
-}
+//Functions to Allow drag and drop on the page
+function allowDrop(ev) {
+    ev.preventDefault();
+  }
+  
+  function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+  function drop(ev) {
+    ev.preventDefault();
+    //if to prevent to move one card inside another
+    if (['a','b','c','d'].indexOf(ev.target.id) == -1 && ev.target.className != 'answer-text'){
+      var data = ev.dataTransfer.getData("text");
+      ev.target.appendChild(document.getElementById(data));
+    }
+  }

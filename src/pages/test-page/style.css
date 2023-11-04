@@ -10,29 +10,52 @@ section{
 form{
     width: 100%;
 }
-/*div where the question is*/
-.question{
-    width: 100%;
+/*---------------------espefific styles---------------------*/
+/*Box with the question, the places to recognize the order and the answer cards*/
+.question-container{
+    display: flex;
     flex-direction: column;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80vw;
 }
-/*the question text itself*/
-.question-text{
-    margin: 1vh 1vw;
+/*Container where the space for answer and the cards with answers are*/
+.container{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    width: 100%;
+    min-height: 20vh;
 }
-/*div where all the answers are in*/
-.answers-options{
-    margin: 1vh 0vw 0vh 1vw ;
+/*Each container where the user will place the answers*/
+.box{
+    border: solid black 2px;
+    width: 18vw;
+    height: 15vh;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*Box Where the answers are*/
+.box-answer{
+    border: solid black 2px;
+    width: 17vw;
+    height: 14vh;
+    box-sizing: border-box;
+    border-radius: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--gold);
+    padding: 1%;
 }
 
-/*radio input and the label*/
-.answer-radio-input, .answer-radio-label{
-    margin: 1vh 1vw;
-    flex-direction: row;
-    align-items: flex-start;
-}
-/**/
-.submit-button{
-  padding: 1vh;  
+.button{
+    font-size: 1.5rem;
+    height: 6vh;
+    width: 10vw;
 }
