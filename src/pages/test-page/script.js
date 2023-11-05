@@ -19,10 +19,14 @@ function $(el){
 function next(){
   //before loading the next question, validade if all cards were moved
   if(!allCardsWereMoved()){
+    //save the user's answers on the object Questions
     collectAnswers()
-    CURRENT_QUESTION++
-    loadNextQuestion()
-    moveCardsBack()
+    if(!((QUESTIONS.questions.length - 1) == CURRENT_QUESTION)){
+      //just do this things if it's not the last question
+      CURRENT_QUESTION++
+      loadNextQuestion()
+      moveCardsBack()
+    }//insert here and else to send the user to another page
   }else $("#error-message").innerHTML = "Please move all cards"
 }
 
