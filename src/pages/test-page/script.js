@@ -13,9 +13,12 @@ function loadQuestions(){
 loadQuestions()
 
 function next(){
-  CURRENT_QUESTION++
-  loadNextQuestion()
-  moveCardsBack()
+  
+  if(!AllCardsWereMoved()){
+    CURRENT_QUESTION++
+    loadNextQuestion()
+    moveCardsBack()
+  }else alert("Please move all cards")
 }
 
 function moveCardsBack(){
@@ -24,13 +27,20 @@ function moveCardsBack(){
   )
 }
 
+function AllCardsWereMoved(){
+  return document.querySelector("#initial-container").childElementCount > 0
+}
+
 function loadNextQuestion(){
   //load the infomartion on the HTML element
-  questionText = QUESTIONS.questions[CURRENT_QUESTION].text
-  document.querySelector("#question").innerHTML = questionText
+  document.querySelector("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
+
   document.querySelector("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
+
   document.querySelector("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
+
   document.querySelector("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
+
   document.querySelector("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
 }
 
