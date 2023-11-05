@@ -1,5 +1,5 @@
 var QUESTIONS;
-var CURRENT_QUESTION = 1;
+var CURRENT_QUESTION = 0;
 
 //function to load the questions from JSON, save then on Session storage and on QUESTIONS variable
 function loadQuestions(){
@@ -12,8 +12,20 @@ function loadQuestions(){
 //Call the function to load the Questions
 loadQuestions()
 
+function next(){
+  CURRENT_QUESTION++
+  loadNextQuestion()
+  moveCardsBack()
+}
+
+function moveCardsBack(){
+  [1,2,3,4].forEach(el => 
+    document.querySelector("#initial-container").appendChild(document.querySelector(`#b${el}`).childNodes[0])
+  )
+}
 
 function loadNextQuestion(){
+  //load the infomartion on the HTML element
   questionText = QUESTIONS.questions[CURRENT_QUESTION].text
   document.querySelector("#question").innerHTML = questionText
   document.querySelector("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
@@ -35,7 +47,7 @@ function allowDrop(ev) {
   function drop(ev) {
     ev.preventDefault();
     //if to prevent to move one card inside another
-    if (['a','b','c','d'].indexOf(ev.target.id) == -1 && ev.target.className != 'answer-text'){
+    if (['a','b','c','d'].indexOf(ev.target.id) == -1){
       var data = ev.dataTransfer.getData("text");
       ev.target.appendChild(document.getElementById(data));
     }

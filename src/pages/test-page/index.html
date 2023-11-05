@@ -13,20 +13,20 @@
     <link rel="stylesheet" href="./style.css">
 
 </head>
-<body>
+<body onload="loadNextQuestion()">
     <!--Question Container-->
     <div class="question-container">
         <!--Question Text-->
         <h1 id="question"></h1>
         <!--Containers where the user have to drop the order-->
         <div class="container">
-            <div id="1" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="2" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="3" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="4" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="b1" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="b2" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="b3" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div id="b4" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
         <!--Initial container for aswers cards -->
-        <div class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div id="initial-container" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div id="a" class="box-answer" id="answer1" draggable="true" ondragstart="drag(event)">
                 <!--Asnwer a-->
             </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="container">
             <input class="button" type="button" value="Previous">
-            <input class="button" type="button" value="Next">
+            <input class="button" type="button" value="Next" onclick="next()">
 
         </div>
     </div>
