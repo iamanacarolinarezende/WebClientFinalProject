@@ -1,8 +1,8 @@
 var QUESTIONS;
 var CURRENT_QUESTION = 0;
 
-//function to load the questions from JSON, save then on Session storage and on QUESTIONS variable
 function loadQuestions(){
+//function to load the questions from JSON, save then on Session storage and on QUESTIONS variable
     return fetch('./questions.json')
     .then((response) => response.json())
     .then(data => QUESTIONS = data) //save the questions on local variable to be easier to access
@@ -12,53 +12,79 @@ function loadQuestions(){
 //Call the function to load the Questions
 loadQuestions()
 
+function $(el){
+  return document.querySelector(`${el}`)
+}
+
 function next(){
-  
-  if(!AllCardsWereMoved()){
+  //before loading the next question, validade if all cards were moved
+  if(!allCardsWereMoved()){
+    collectAnswers()
     CURRENT_QUESTION++
     loadNextQuestion()
     moveCardsBack()
-  }else alert("Please move all cards")
+  }else $("#error-message").innerHTML = "Please move all cards"
 }
 
 function moveCardsBack(){
+  //move the cards to the initial container when loading a new question
   [1,2,3,4].forEach(el => 
-    document.querySelector("#initial-container").appendChild(document.querySelector(`#b${el}`).childNodes[0])
+    $("#initial-container").appendChild($(`#b${el}`).childNodes[0])
   )
+  $("#error-message").innerHTML = ""
 }
 
-function AllCardsWereMoved(){
-  return document.querySelector("#initial-container").childElementCount > 0
+function allCardsWereMoved(){
+  //validade if all cards were moved
+  return $("#initial-container").childElementCount > 0
+}
+
+function collectAnswers(){
+  var res = [];
+  
+  [1,2,3,4].forEach(el => res.push([el, $(`#b${el}`).childNodes[0].id]));
+
+  QUESTIONS.questions[CURRENT_QUESTION].answers = res;
+  
+  updateQuestionsOnSessionStorage()
+  
 }
 
 function loadNextQuestion(){
   //load the infomartion on the HTML element
-  document.querySelector("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
+  $("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
 
-  document.querySelector("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
+  $("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
 
-  document.querySelector("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
+  $("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
 
-  document.querySelector("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
+  $("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
 
-  document.querySelector("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
+  $("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
 }
 
+
+function updateQuestionsOnSessionStorage(){
+  sessionStorage.setItem("questions", JSON.stringify(QUESTIONS))
+}
 
 //Functions to Allow drag and drop on the page
 function allowDrop(ev) {
     ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  //if to prevent to move one card inside another
+  if ((['a','b','c','d'].indexOf(ev.target.id) == -1 
+      && ev.target.childElementCount == 0)
+      || ev.target.id == 'initial-container') //permit to move card back to initial container
+  {
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
   }
-  
-  function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
-  
-  function drop(ev) {
-    ev.preventDefault();
-    //if to prevent to move one card inside another
-    if (['a','b','c','d'].indexOf(ev.target.id) == -1){
-      var data = ev.dataTransfer.getData("text");
-      ev.target.appendChild(document.getElementById(data));
-    }
-  }
+}

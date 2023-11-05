@@ -25,6 +25,9 @@
             <div id="b3" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
             <div id="b4" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         </div>
+        <div class="container-informative">
+            <div id="best">Best Answer</div> <div id="worst">Worst Answer</div>
+        </div>
         <!--Initial container for aswers cards -->
         <div id="initial-container" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
             <div id="a" class="box-answer" id="answer1" draggable="true" ondragstart="drag(event)">
@@ -40,10 +43,9 @@
                 <!--Asnwer d-->
             </div>
         </div>
+        <div id="error-message" class="container-informative"></div>
         <div class="container">
-            <input class="button" type="button" value="Previous">
             <input class="button" type="button" value="Next" onclick="next()">
-
         </div>
     </div>
 
