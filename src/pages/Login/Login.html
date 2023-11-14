@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="../test-page/script.js"></script>
+</head>
+<body>
+    <div id="divbar">
+        <p id="login">Login</p>
+        <h6 id="passerror"></h6>
+    <div class="form-group">
+        <label for="textBoxUserName" id="username">Username</label>
+        <input class="form-control" id="textBoxUserName" placeholder="    Write something ..." type="text">
+    </div>
+    
+    <div class="form-group">
+        <label for="textBoxPassword" id="password">Password</label>
+        <input class="form-control" id="textBoxPassword" placeholder="    Write something ..." type="text"> 
+        <button onclick="generatePassword()">Generate Password</button>   
+    </div>
+    <div class="form-group">
+    <a  class="btn-login"><button onclick="login()" id="signinbutton">Login</button></a>
+    </div>
+</div>
+</body>
+</html>
