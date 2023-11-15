@@ -21,6 +21,7 @@ body{
   min-height: 100vh;
   margin-top: 8vh;
 }
+
 header{
   width: 100vw;
   position: fixed;
@@ -29,7 +30,7 @@ header{
 
 header > nav {
   width: 100%;
-  background-color: var(--secundary-color);
+  background-color: white;
   min-height: 7vh;
   display: flex;
   justify-content: flex-start;
@@ -42,13 +43,103 @@ header > nav > ul {
   align-content: center;
   list-style: none;
 }
+
 header > nav > ul > li{
   display: flex;
   justify-content: center;
   align-content: center;
 }
+
 header > nav > ul > li > a{
   text-decoration:none;
   height: 100%;
   padding: 1.5em;
+}
+
+.active,
+header > nav > ul > li > a:hover{
+  background-color: var(--primary-color);
+  color: var(--secundary-color);
+}
+
+footer{
+  width: 100%;
+  text-align: center;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*Specific Elements on home page*/
+#banner{
+  background-image: url("/src/img/banner.jpg");
+  background-size:cover;
+  background-position: center;
+  height: 92vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#banner-title{
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 0 2px var(--primary-color); /* horizontal-offset vertical-offset 'blur' colour */
+  -moz-text-shadow: 0 0 2px var(--primary-color);
+  -webkit-text-shadow: 0 0 2px var(--primary-color);
+}
+
+#text-content{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0% 10%;
+}
+
+#text-content > h2{
+  padding-top: 5%;
+  font-size: 48px;
+}
+
+#text-content > p{
+  margin-top: 5%;
+  font-size:18px;
+  line-height: 2rem;
+  text-align: justify;
+}
+
+#text-content > ul{
+  display: flex;
+  list-style: none;
+  font-size:18px;
+  line-height: 2rem;
+}
+
+#text-content > ul > li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  margin:8px;
+  margin-top: 5%;
+  padding: 10px;
+  background-color: var(--primary-color);
+  color:var(--secundary-color);
+  height: 220px;
+  width: 220px;
+  border-radius: 50%;
+}
+
+#text-content > button{
+  background-color: var(--primary-color);
+  color:var(--secundary-color);
+  padding: 15px;
+  font-size: 36px;
+  margin-top: 5vh;
+  border-radius: 15px;
 }

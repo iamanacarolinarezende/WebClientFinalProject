@@ -12,12 +12,15 @@
 
     <!--Importing Global Styles-->
     <link rel="stylesheet" href="./src/styles/globals.css">
+
+    <!--Importing global scripts-->
+    <script src="./src/scripts/main.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="./src/pages/login/index.html">Login</a></li>
                 <li><a href="./src/pages/about-us/index.html">About Us</a></li>
                 <li><a href="logout.html">Logout</a></li>
@@ -28,18 +31,54 @@
 
 
     <main>
-        <h1>About Our Project</h1>
-        <h2>Our Team</h2>
-        <p>We are a team of dedicated students enrolled in the Web Client Development course (WEB CLIENT DEVELOPMENT 420-DW2-AS) for the Fall 2023 term. Our group has come together to collaborate on an exciting web development project.</p>
+        <div id="banner">
+            <h1 id="banner-title">True Colors Personality Test</h1>
+        </div>
+        <div id="text-content">
+            <h2>Why Personality Tests?</h2>
+            <p>
+                A personality test is completed to yield a description of an individual’s distinct
+                personality traits. In most instances, your personality will influence
+                relationships with your family, friends, and classmates and contribute to your
+                health and well-being. Teachers can administer a personality test in class to
+                help your children discover their strengths and developmental needs. The
+                driving force behind administering a personality test is to open up lines of
+                communication and bring students together to have a higher appreciation for
+                one another. A personality test can provide guidance to teachers of what
+                teaching strategies will be the most effective for their students
+            </p>
+            <h2>Benefits</h2>
 
-        <h2>Project Overview</h2>
-        <p>Our project is a client-side web application that showcases our skills and knowledge gained throughout the course. It consists of several key components, including a login form, a questionnaire form featuring "The True Colors Personality Test," and a results display. Our primary goal is to deliver a user-friendly and visually appealing web app that effectively utilizes HTML, CSS, JavaScript (including jQuery), and other relevant technologies.</p>
+            <ul>
+                <li>Increasing productivity</li>
+                <li>Get along better with classmates</li>
+                <li>Help students realize their full potential</li>
+                <li>Identify teaching strategies for students</li>
+                <li>Help students appreciate other personality types</li>
+            </ul>
 
-        <h2>Technical Specifications</h2>
-        <p>We follow technical specifications to ensure the success of our project, including the use of the Document Object Model (DOM) to display test results, personalizing the user experience with JavaScript session storage, and adhering to HTML standards. Our project includes a navigation menu, error handling, proper code formatting, standard file and directory names, and a readme file to document our progress.</p>
+            <h2>About The Test</h2>
+            <p>
+                True Colors Personality Test is one of the most popular personality tests. This personality test asks a serious of questions to rate your likes and
+                dislikes. The test will then rate your personality as either a blue, green, orange
+                or gold personality type. You may be a combination of two colors, but usually
+                a student will exhibit one primary color. A personality test is not a means to
+                type cast a student, but it allows teachers to understand the personality
+                attributes associated with various students. You will operate as one primary
+                color for the most part, but high levels of stress and other environmental
+                factors can shift your personality type for short intervals. As a rule of
+                thumb, you should recognize your strong attributes and keep in mind the
+                attributes that irritate people.
+            </p>
+            <p>
 
-        <h2>Our Commitment</h2>
-        <p>We are committed to delivering a high-quality web application that not only meets the course requirements but also demonstrates our passion for web client development. We aim to excel in the peer review process and impress both our instructors and fellow students with our final product.</p>
+                Teachers should disseminate a personality test to their children the first week
+                of school. A personality test is a fun exercise for the class and will enable
+                the teacher to more adequately plan lessons and activities for their students.
+            </p>
+            
+            <button onclick="makeTest()">Discover Your Colors</button>
+        </div>
     </main>
 
     <footer>
