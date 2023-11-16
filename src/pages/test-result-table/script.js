@@ -109,6 +109,8 @@ console.log("Character(s) with the max points:", charactersWithMaxPoints);
       
   }
 }
+
+
 function displayResults(arrayString){
 
   for(var i =0;i<arrayString.length;i++){
