@@ -91,14 +91,15 @@ function displayUserData() {
       document.getElementById("result_table").rows[storedAnswers.questions.length+1].cells[4].innerText = totalPointsOfD;
 
       var obj = {'a':totalPointsOfA,'b':totalPointsOfB,'c':totalPointsOfC,'d':totalPointsOfD}
-    
+      //sessionStorage.setItem("finalRank", obj)
 // Find the maximum value
-var maxPoints = Math.max(...Object.values(obj));
+      var maxPoints = Math.max(...Object.values(obj));
 
-// Find characters with the maximum value
-var charactersWithMaxPoints = Object.keys(obj).filter(key => obj[key] === maxPoints).slice(0, 2);
-
-console.log("Character(s) with the max points:", charactersWithMaxPoints);
+    // Find characters with the maximum value
+      var charactersWithMaxPoints = Object.keys(obj).filter(key => obj[key] === maxPoints).slice(0, 2);
+      sessionStorage.setItem("finalResult", charactersWithMaxPoints)
+      displayResults(charactersWithMaxPoints)
+    console.log("Character(s) with the max points:", charactersWithMaxPoints);
 //peronalityResult= charactersWithMaxPoints[0]
 
    // displayResults(charactersWithMaxPoints)
@@ -113,25 +114,15 @@ console.log("Character(s) with the max points:", charactersWithMaxPoints);
 
 function displayResults(arrayString){
 
-  for(var i =0;i<arrayString.length;i++){
-    if(arrayString[i]=='a'){
-    //  window.location.href="../results/personality_Results_Page.html"
-      document.getElementById("displayResult").innerHTML="hi"
-    }
-    if(arrayString[i]=='b'){
-      window.location.href="../results/personality_Results_Page.html"
-      document.getElementById("displayResult").innerHTML="aa"
-    }
-    if(arrayString[i]=='c'){
-      window.location.href="../results/personality_Results_Page.html"
-      document.getElementById("displayResult").innerHTML="bb"
-    }
-    if(arrayString[i]=='d'){
-      window.location.href="../results/personality_Results_Page.html"
-      document.getElementById("displayResult").innerHTML="cc"
-    }
-  }
+  arrayString.forEach(element => {
+    console.log(element)
+    var res =  document.createElement('a')
+    res.setAttribute("href",`../test-result-colors/${element}.html`)
+    res.innerHTML = `${element}`
+    document.querySelector(".results").appendChild(res)
+  });
 }
+
 // Call the function to display user data when the page loads
 window.onload = displayUserData;
 
