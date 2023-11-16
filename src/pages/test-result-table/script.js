@@ -1,5 +1,5 @@
-
 var peronalityResult=''
+
 function displayUserData() {
   // I get the answers from the sessionStorage.
   var storedAnswers = JSON.parse(sessionStorage.getItem("questions"));
@@ -72,7 +72,7 @@ function displayUserData() {
             }
             }
           }
-            //assigning points to each tr
+          //assigning points to each tr
           document.getElementById("result_table").rows[answerRow+1].cells[1].innerText = pointsOfA;
           document.getElementById("result_table").rows[answerRow+1].cells[2].innerText = pointsOfB;
           document.getElementById("result_table").rows[answerRow+1].cells[3].innerText = pointsOfC;
@@ -84,7 +84,7 @@ function displayUserData() {
           totalPointsOfD += pointsOfD;
       }
       //displaying the total in the last tr
-     document.getElementById("result_table").rows[storedAnswers.questions.length+1].cells[0].innerText = "TOTAL POINTS";
+      document.getElementById("result_table").rows[storedAnswers.questions.length+1].cells[0].innerText = "TOTAL POINTS";
       document.getElementById("result_table").rows[storedAnswers.questions.length+1].cells[1].innerText = totalPointsOfA;
       document.getElementById("result_table").rows[storedAnswers.questions.length+1].cells[2].innerText = totalPointsOfB;
       document.getElementById("result_table").rows[storedAnswers.questions.length+1].cells[3].innerText = totalPointsOfC;
@@ -102,9 +102,9 @@ console.log("Character(s) with the max points:", charactersWithMaxPoints);
 //peronalityResult= charactersWithMaxPoints[0]
 
    // displayResults(charactersWithMaxPoints)
-   $(document).ready(function() {
-    $('#myButton').on('click', displayResults(charactersWithMaxPoints));
-});
+//$(document).ready(function() {
+//    $('#myButton').on('click', displayResults(charactersWithMaxPoints));
+//});
 
       
   }
