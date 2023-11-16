@@ -90,7 +90,7 @@ footer{
   -webkit-text-shadow: 0 0 2px var(--primary-color);
 }
 
-#text-content{
+.text-content{
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -100,26 +100,26 @@ footer{
   padding: 0% 10%;
 }
 
-#text-content > h2{
+.text-content > h2{
   padding-top: 5%;
   font-size: 48px;
 }
 
-#text-content > p{
+.text-content > p{
   margin-top: 5%;
   font-size:18px;
   line-height: 2rem;
   text-align: justify;
 }
 
-#text-content > ul{
+.text-content > ul{
   display: flex;
   list-style: none;
   font-size:18px;
   line-height: 2rem;
 }
 
-#text-content > ul > li{
+.text-content > ul > li{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +135,7 @@ footer{
   border-radius: 50%;
 }
 
-#text-content > button{
+.text-content > button{
   background-color: var(--primary-color);
   color:var(--secundary-color);
   padding: 15px;
