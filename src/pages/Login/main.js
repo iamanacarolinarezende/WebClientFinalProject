@@ -1,20 +1,16 @@
 function login(){
-    //document.getElementById("passerror").innerText="";
     event.preventDefault();
-   var username = document.getElementById("textBoxUserName").value
-   var password =document.getElementById("textBoxPassword").value
-   var user = {username:username,
-    password: password,
-      }
-    //  if(password.length<8 || password.charAt(0)!== )
-          // Save the data in the browser's sessionStorage
-sessionStorage.setItem("user", user);
-    // Save the data in the browser's LocalStorage
-//var users = []
-//users.push(user)
-//localStorage.setItem("users",JSON.stringify(users));
-window.location.href = "Home.html"
-document.write(user.username,user.password)
+    var username = document.getElementById("textBoxUserName").value
+    var password =document.getElementById("textBoxPassword").value
+    var user = {username:username, password: password}
+
+    sessionStorage.setItem("user", user);
+    
+    //we can add a validation for the username
+    if(password === sessionStorage.getItem("generatedPassword")){
+        console.log("deu match")
+        window.location.href="../test-form/index.html"
+    }
 }  
 
 function generatePassword() {
@@ -25,6 +21,7 @@ function generatePassword() {
         password += charset.charAt(Math.floor(Math.random() * charset.length));
     }
     document.getElementById("textBoxPassword").value = password;
+    sessionStorage.setItem("generatedPassword", password)
     return password;
 }
 
