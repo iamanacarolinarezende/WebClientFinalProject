@@ -31,12 +31,13 @@ form{
     justify-content: space-between;
     width: 80vw;
     min-height: 20vh;
+    margin-top: 15px;
 }
 /*Each container where the user will place the answers*/
 .box{
-    border: solid black 2px;
+    border: solid var(--primary-color) 2px;
     width: 25%;
-    height: 20vh;
+    height: 30vh;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -44,16 +45,17 @@ form{
 }
 /*Box Where the answers are*/
 .box-answer{
-    border: solid black 2px;
+    border: solid var(--primary-color) 2px;
     width: 17vw;
-    height: 14vh;
+    height: 25vh;
+    font-size: 18px;
     box-sizing: border-box;
     border-radius: 1vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--primary-color);
-    color: var(--gold);
+    color: var(--secundary-color);
     padding: 1%;
 }
 
@@ -73,12 +75,28 @@ form{
 #best, #worst{
     width: 50%;
     height: 3vh;
+    font-size: 18px;
 }
+
 #worst{
     text-align: right;
-    background-image: linear-gradient(to right, white , red)
+    background-image: linear-gradient(to right, white , red);
+    border-radius: 10px 0px;
+    padding: 25px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
+
 #best{
     text-align: left;
-    background-image: linear-gradient(to right, green , white)
+    background-image: linear-gradient(to right, green , white);
+    border-radius: 0px 10px;
+    padding: 25px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+.question{
+    font-size: 48px;
 }
