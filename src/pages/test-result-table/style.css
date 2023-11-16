@@ -36,5 +36,16 @@
   font-size: 18px;
 }
 
+.results{
+  height: 5vh;
+  margin-top: 5vh;
+}
 
+.link-to-colors{
+  font-size: 18px;
+  text-decoration: none;
+  padding: 1vh;
+  margin: 1vh;
+  box-sizing: border-box;
+}
 

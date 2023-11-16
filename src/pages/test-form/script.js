@@ -59,17 +59,23 @@ function collectAnswers(){
 
 function loadNextQuestion(){
   //load the infomartion on the HTML element
-
-  $("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
-
-  $("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
-
-  $("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
-
-  $("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
-
-  $("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
-
+  var isLoading = true;
+  //put this loop to assure the questions will be loaded
+  while(isLoading){
+    if(QUESTIONS !== undefined){
+      $("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
+    
+      $("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
+    
+      $("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
+    
+      $("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
+    
+      $("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
+    
+      isLoading = false;
+    }
+  }
 }
 
 function updateQuestionsOnSessionStorage(){

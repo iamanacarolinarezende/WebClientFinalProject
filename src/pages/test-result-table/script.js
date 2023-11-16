@@ -107,12 +107,13 @@ function displayUserData() {
 }
 
 function displayResults(arrayString){
-
+  var colors = {a: 'Orange', b: 'Green', c: 'Blue', d: 'Gold'}
   arrayString.forEach(element => {
     console.log(element)
     var res =  document.createElement('a')
     res.setAttribute("href",`../test-result-colors/${element}.html`)
-    res.innerHTML = `${element}`
+    res.setAttribute("class", "link-to-colors")
+    res.innerHTML = `${colors[element]}`
     document.querySelector(".results").appendChild(res)
   });
 }
