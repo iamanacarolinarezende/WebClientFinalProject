@@ -9,8 +9,7 @@ async function loadQuestions(){
     .then(res => JSON.stringify(res))
     .then(data => sessionStorage.setItem("questions", data)) //also save the questions on to sessionStorage  
 }
-//Call the function to load the Questions
-loadQuestions()
+
 
 function $(el){
   return document.querySelector(`${el}`)
@@ -57,25 +56,23 @@ function collectAnswers(){
   
 }
 
-function loadNextQuestion(){
+async function loadNextQuestion(){
   //load the infomartion on the HTML element
-  var isLoading = true;
-  //put this loop to assure the questions will be loaded
-  while(isLoading){
-    if(QUESTIONS !== undefined){
-      $("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
-    
-      $("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
-    
-      $("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
-    
-      $("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
-    
-      $("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
-    
-      isLoading = false;
-    }
+  if(QUESTIONS === undefined){
+      //Call the function to load the Questions
+  await loadQuestions()
   }
+  $("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
+
+  $("#a").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'a').text
+
+  $("#b").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'b').text
+
+  $("#c").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'c').text
+
+  $("#d").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].options.find( val => val.id == 'd').text
+
+
 }
 
 function updateQuestionsOnSessionStorage(){
