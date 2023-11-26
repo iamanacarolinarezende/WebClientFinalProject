@@ -1,62 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test</title>
 
-    <!--Importing Global Styles-->
-    <link rel="stylesheet" href="../../styles/globals.css">
-    <!--Importing Specific Styles-->   
-    <link rel="stylesheet" href="./style.css">
-    <!--Importing the script-->
-    <script src="./script.js"></script>
+        <!--Importing Global Styles-->
+        <link rel="stylesheet" href="../../styles/globals.css">
+        <!--Importing Specific Styles-->   
+        <link rel="stylesheet" href="./style.css">
+        <!--Importing the script-->
+        <script src="./script.js"></script>
 
-</head>
-<header>
-    <nav>
-        <ul>
-            <li><a href="../../../Index.html">Home</a></li>
-            <li><a href="../login/index.html">Login</a></li>
-            <li><a href="../about-us/index.html">About Us</a></li>
-        </ul>
-    </nav>
-</header>
-<body onload="loadNextQuestion()">
-    <!--Question Container-->
-    <div class="question-container">
-        <!--Question Text-->
-        <h1 id="question" class="question"></h1>
-        <!--Containers where the user have to drop the order-->
-        <div class="container">
-            <div id="b1" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="b2" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="b3" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div id="b4" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </head>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../../../Index.html">Home</a></li>
+                <li><a href="../login/index.html">Login</a></li>
+                <li><a href="../about-us/index.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body onload="loadNextQuestion()">
+        <!--Question Container-->
+        <div class="question-container">
+            <!--Question Text-->
+            <h1 id="question" class="question"></h1>
+            <!--Containers where the user have to drop the order-->
+            <div class="container">
+                <div id="b1" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="b2" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="b3" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <div id="b4" class="box" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="container-informative">
+                <div id="best">Best Answer</div> <div id="worst">Worst Answer</div>
+            </div>
+            <!--Initial container for aswers cards -->
+            <div id="initial-container" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="a" class="box-answer" id="answer1" draggable="true" ondragstart="drag(event)">
+                    <!--Asnwer a-->
+                </div>
+                <div id="b" class="box-answer" id="answer2" draggable="true" ondragstart="drag(event)">
+                    <!--Asnwer b-->
+                </div>
+                <div id="c" class="box-answer" id="answer3" draggable="true" ondragstart="drag(event)">
+                    <!--Asnwer c-->
+                </div>
+                <div id="d" class="box-answer" id="answer4" draggable="true" ondragstart="drag(event)">
+                    <!--Asnwer d-->
+                </div>
+            </div>
+            <div id="error-message" class="container-informative"></div>
+
+            <input class="button" type="button" value="Next" onclick="next()">
+
         </div>
-        <div class="container-informative">
-            <div id="best">Best Answer</div> <div id="worst">Worst Answer</div>
-        </div>
-        <!--Initial container for aswers cards -->
-        <div id="initial-container" class="container" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <div id="a" class="box-answer" id="answer1" draggable="true" ondragstart="drag(event)">
-                <!--Asnwer a-->
-            </div>
-            <div id="b" class="box-answer" id="answer2" draggable="true" ondragstart="drag(event)">
-                <!--Asnwer b-->
-            </div>
-            <div id="c" class="box-answer" id="answer3" draggable="true" ondragstart="drag(event)">
-                <!--Asnwer c-->
-            </div>
-            <div id="d" class="box-answer" id="answer4" draggable="true" ondragstart="drag(event)">
-                <!--Asnwer d-->
-            </div>
-        </div>
-        <div id="error-message" class="container-informative"></div>
 
-        <input class="button" type="button" value="Next" onclick="next()">
-
-    </div>
-
-</body>
+    </body>
+    <footer>
+        <p>@College LaSalle 2023 - </p>
+        <p>Developed by: Barbouchi, Jasser / Larios Medina, Ana Laura / Madeira Splett, Augusto / Testa Sandrini, Danilo / Andrea De Rezende, Ana Carolina</p>
+    </footer>
 </html>

@@ -1,7 +1,7 @@
 /*Colors Variables*/
 :root{
   --primary-color: #164863;
-  --secundary-color: #9BBEC8;
+  --secundary-color: #bce2ec;
   --gold: #D6D46D;
   --orange: #FF6C22;
   --green: #A7D397;
@@ -13,7 +13,6 @@
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  color:var(--primary-color)
 }
 /*Defining the size of the body to the size of the screen*/
 body{
@@ -48,6 +47,7 @@ header > nav > ul > li{
   display: flex;
   justify-content: center;
   align-content: center;
+  font-weight: 600;
 }
 
 header > nav > ul > li > a{
@@ -72,7 +72,7 @@ footer{
 }
 /*Specific Elements on home page*/
 #banner{
-  background-image: url("/src/img/banner.jpg");
+  background-image: url("../img/banner.webp");
   background-size:cover;
   background-position: center;
   height: 92vh;
@@ -88,6 +88,7 @@ footer{
   text-shadow: 0 0 2px var(--primary-color); /* horizontal-offset vertical-offset 'blur' colour */
   -moz-text-shadow: 0 0 2px var(--primary-color);
   -webkit-text-shadow: 0 0 2px var(--primary-color);
+  
 }
 
 .text-content{
@@ -142,4 +143,32 @@ footer{
   font-size: 36px;
   margin-top: 5vh;
   border-radius: 15px;
+}
+
+/*About us page*/
+#about-title{
+  animation-name: color-change;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: #D6D46D;
+  }
+  20% {
+    color: #FF6C22;
+  }
+  40% {
+    color: #A7D397;
+  }
+  60% {
+    color: #39A7FF;
+  }
+  80% {
+    color: #164863;
+  }
+  100% {
+    color: #bce2ec;
+  }
 }

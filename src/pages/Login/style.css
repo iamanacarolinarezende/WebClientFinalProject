@@ -4,6 +4,9 @@
     font-style: normal;
     font-weight: 700;
     bottom: 20px;
+    animation-name: color-change;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
     
   }
   #divbar{
@@ -13,8 +16,7 @@
       margin: 90px;
       margin-bottom: 0px;
       width: 450px;
-    
-      padding: 20px;
+      padding: 40px 20px 5px 20px;
       left: 410px;
       top: 10px;
       box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
@@ -26,10 +28,11 @@
     position: relative;
     width: 300px;
     height: 35px;
-
     border-radius: 50px;
+    padding-left: 10px;
+  }
 
-}
+
 #passerror{
     font-size: 15px;
     color :rgb(148, 33, 33);
@@ -39,7 +42,7 @@
     position: relative;
     width: 300px;
     height: 35px;
-  
+    padding-left: 10px;
     border-radius: 50px;
   
   }
@@ -56,8 +59,47 @@
 
   .btn-login{
   
-    position: relative;left: 280px;
-    
+    position: relative;
+    left: 280px;
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background-color:#7892c2;
+    border-radius:10px;
+    border:1px solid #4e6096;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:16px;
+    padding:12px 37px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+  }
+
+  .btn-login:hover {
+    background-color:#476e9e;
+  }
+
+  .btn-pass{
+  
+    position: relative;
+    left: 20px;
+    top: 10px;
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background-color:#7892c2;
+    border-radius:10px;
+    border:1px solid #4e6096;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    padding:10px 15px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #283966;
+  }
+
+  .btn-pass:hover {
+    background-color:#476e9e;
   }
 
   #result_table{
@@ -96,6 +138,33 @@
     vertical-align:middle;
     cursor:pointer;
     
+}
+
+#login-title{
+  animation-name: color-change;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: #D6D46D;
+  }
+  20% {
+    color: #FF6C22;
+  }
+  40% {
+    color: #A7D397;
+  }
+  60% {
+    color: #39A7FF;
+  }
+  80% {
+    color: #164863;
+  }
+  100% {
+    color: #bce2ec;
+  }
 }
 
 

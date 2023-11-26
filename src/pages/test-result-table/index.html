@@ -8,7 +8,7 @@
      <!--Importing Global Styles-->
      <link rel="stylesheet" href="../../styles/globals.css">
      
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     
     <script src="./script.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
@@ -24,7 +24,7 @@
         </nav>
     </header>
 <div class="text-content">
-    <h1 class="question">Result page</h1>
+    <h1 class="question">Result Page</h1>
     <table id="result_table">
         <tr>
             <td>Number</td>
@@ -118,11 +118,48 @@
             <td></td>
         </tr>
     </table>
-    <button id="myButton" >Check Personality</button>
+<br>
+    <h3>Total your columns and place you results in the blanks below:</h3><br>
+    <form action="#" method="post">
+
+            <input type="number" id="sumA" name="sumA">
+            <label for="sumA">A: Orange</label>
+            <br><br>
+
+            <input type="number" id="sumB" name="sumB">
+            <label for="sumB">B: Green</label>
+            <br><br>
+
+            <input type="number" id="sumC" name="sumC">
+            <label for="sumC">C: Blue</label>
+            <br><br>
+
+            <input type="number" id="sumD" name="sumD">
+            <label for="sumD">D: Gold</label>
+            <br><br>
+
+
+        <label for="firstColor">What is your first color?</label><br>
+        <input type="text" id="firstColor" name="firstColor"><br><br>
+
+        <label for="secondColor">What is your second color?</label><br>
+        <input type="text" id="secondColor" name="secondColor"><br><br>
+
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+    </form>
+    <!--<button id="myButton" >Check Personality</button> -->
+    <br>
+    <h3>Check your color below</h3>
     <div class="results">
         
     </div>
 </div>
 <script>window.onload = displayUserData;</script>
 </body>
+<footer>
+    <p>@College LaSalle 2023 - </p>
+    <p>Developed by: Barbouchi, Jasser / Larios Medina, Ana Laura / Madeira Splett, Augusto / Testa Sandrini, Danilo / Andrea De Rezende, Ana Carolina</p>
+</footer>
 </html>

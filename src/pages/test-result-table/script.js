@@ -1,3 +1,14 @@
+// Create a new link element
+var link = document.createElement("link");
+
+// Set the attributes of the link element
+link.setAttribute("rel", "stylesheet");
+link.setAttribute("href", "style.css");
+
+// Append the link element to the head of the document
+document.head.appendChild(link);
+
+
 var peronalityResult=''
 
 function displayUserData() {
@@ -94,9 +105,25 @@ function displayUserData() {
     // Find the maximum value
     var maxPoints = Math.max(...Object.values(obj));
 
+    // Extracting the two highest scores
+    var sortedScores = Object.values(obj).sort((a, b) => b - a).slice(0, 2);
+
+    // Iterating through the table cells and applying styles to the cells containing the two highest scores
+    for (var i = 1; i < 5; i++) { // Assuming columns 1 to 4 contain scores
+        var cellValue = document.getElementById("result_table").rows[storedAnswers.questions.length + 1].cells[i].innerText;
+        
+        if (sortedScores.includes(parseInt(cellValue))) {
+            // Apply styles to highlight the cells with the highest scores
+            document.getElementById("result_table").rows[storedAnswers.questions.length + 1].cells[i].style.fontWeight = "bold";
+            document.getElementById("result_table").rows[storedAnswers.questions.length + 1].cells[i].style.fontSize = "larger";
+            document.getElementById("result_table").rows[storedAnswers.questions.length + 1].cells[i].style.color = "blue";
+            document.getElementById("result_table").rows[storedAnswers.questions.length + 1].cells[i].style.animation = "highlight 1s ease-in-out infinite";
+        }
+    }
+
     // Find characters with the maximum value
     var charactersWithMaxPoints = Object.keys(obj).filter(key => obj[key] === maxPoints).slice(0, 2);
-    
+
     //save the final result to session storage
     sessionStorage.setItem("finalResult", charactersWithMaxPoints)
     
@@ -109,12 +136,13 @@ function displayUserData() {
 function displayResults(arrayString){
   var colors = {a: 'Orange', b: 'Green', c: 'Blue', d: 'Gold'}
   arrayString.forEach(element => {
-    console.log(element)
-    var res =  document.createElement('a')
-    res.setAttribute("href",`../test-result-colors/${element}.html`)
-    res.setAttribute("class", "link-to-colors")
-    res.innerHTML = `${colors[element]}`
-    document.querySelector(".results").appendChild(res)
+    var button = document.createElement('button');
+    button.setAttribute("class", "button-for-colors");
+    button.innerHTML = `${colors[element]}`;
+    button.onclick = function() {
+      window.location.href = `../test-result-colors/${element}.html`;
+    };
+    document.querySelector(".results").appendChild(button);
   });
 }
 
