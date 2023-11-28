@@ -102,6 +102,21 @@ function displayUserData() {
     document.getElementById("result_table").rows[storedAnswers.questions.length+1].cells[4].innerText = totalPointsOfD;
 
     var obj = {'a':totalPointsOfA,'b':totalPointsOfB,'c':totalPointsOfC,'d':totalPointsOfD}
+    console.log("Object Original:")
+    console.log(obj)
+
+// teste augusto 
+    const keyValueArray = Object.entries(obj);
+    // Sort the array based on the values (second element of each sub-array)
+    keyValueArray.sort((a, b) => b[1]- a[1]);
+    var final = [...keyValueArray[0][0], keyValueArray[1][0]]
+    console.log(final)
+    // Create a new object from the sorted array
+    //const sortedObject = Object.fromEntries(keyValueArray);
+    //console.log("Object Sorted:")
+    //console.log(sortedObject)
+//
+
     // Find the maximum value
     var maxPoints = Math.max(...Object.values(obj));
 
@@ -128,7 +143,7 @@ function displayUserData() {
     sessionStorage.setItem("finalResult", charactersWithMaxPoints)
     
     //call the function to create te links with the responses
-    displayResults(charactersWithMaxPoints)
+    displayResults(final)
 
   }
 }
