@@ -59,8 +59,9 @@ function collectAnswers(){
 async function loadNextQuestion(){
   //load the infomartion on the HTML element
   if(QUESTIONS === undefined){
+    handleLogin();
       //Call the function to load the Questions
-  await loadQuestions()
+    await loadQuestions();
   }
   $("#question").innerHTML = QUESTIONS.questions[CURRENT_QUESTION].text
 

@@ -16,14 +16,18 @@
     <!--Importing global scripts-->
     <script src="./src/scripts/main.js"></script>
 </head>
-<body>
+<body onload="handleLogin()">
     <header>
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="./src/pages/login/index.html">Login</a></li>
                 <li><a href="./src/pages/about-us/index.html">About Us</a></li>
+                <li><a id="login-button" href="./src/pages/login/index.html">Login</a></li>
             </ul>
+            <div>
+                <span id="user-name"></span>
+                <button id="logout" onclick="handleLogout()" style="visibility: hidden;">Logout</button>
+            </div>
         </nav>
     </header>
 

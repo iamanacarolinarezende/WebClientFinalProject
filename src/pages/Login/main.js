@@ -2,15 +2,17 @@ function login(){
     event.preventDefault();
     var username = document.getElementById("textBoxUserName").value
     var password =document.getElementById("textBoxPassword").value
-    var user = {username:username, password: password}
-
+    var user = JSON.stringify({username:username, password: password})
+    //save the user and password on session storage
     sessionStorage.setItem("user", user);
-    
-    //we can add a validation for the username
-    if(password === sessionStorage.getItem("generatedPassword")){
-        console.log("deu match")
-        window.location.href="../test-form/index.html"
-    }
+    //validate if the user name contains any value
+    if (username.length !== 0 ){
+        //validate if the password matchs with the one on sessionStorage
+        if(password === sessionStorage.getItem("generatedPassword")){
+            handleLogin()
+            window.location.href="../test-form/index.html"
+        }
+    }else{ alert("Validate User name!")}
 }  
 
 function generatePassword() {

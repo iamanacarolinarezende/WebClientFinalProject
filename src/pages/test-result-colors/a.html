@@ -1,22 +1,27 @@
 <!DOCTYPE html> 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Colors meaning </title>
-        <!--Importing Global Styles-->
-        <link rel="stylesheet" href="../../styles/globals.css">
-        <link rel="stylesheet" href="./style.css">
-
-    </head>
-    <body>
+    <body onload="handleLogin()">
+        <head>
+            <meta charset="UTF-8">
+            <title>Colors meaning </title>
+            <!--Importing Global Styles-->
+            <link rel="stylesheet" href="../../styles/globals.css">
+            <link rel="stylesheet" href="./style.css">
+            <script src="../../scripts/main.js"></script>
+    
+        </head>
         <header>
             <nav>
                 <ul>
                     <li><a href="../../../Index.html">Home</a></li>
-                    <li><a href="../login/index.html">Login</a></li>
                     <li><a href="../about-us/index.html">About Us</a></li>
+                    <li><a id="login-button" href="../login/index.html">Login</a></li>
                     <li><a href="javascript:window.history.back();"> &larr; Back</a></li>
                 </ul>
+                <div>
+                    <span id="user-name"></span>
+                    <button id="logout" onclick="handleLogout()" style="visibility: hidden;">Logout</button>
+                </div>
             </nav>
         </header>
 

@@ -18,7 +18,7 @@
 body{
   width: 100vw;
   min-height: 100vh;
-  margin-top: 8vh;
+  margin-top: 7vh;
 }
 
 header{
@@ -32,7 +32,7 @@ header > nav {
   background-color: white;
   min-height: 7vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-content: center;
 }
 
@@ -150,6 +150,28 @@ footer{
   animation-name: color-change;
   animation-duration: 5s;
   animation-iteration-count: infinite;
+}
+header > nav > div{
+  display: flex;
+
+}
+#user-name{
+  font-size: 18px;
+  padding: 1.5em;
+  font-weight: 500;
+}
+
+#logout{
+  font-size: 18px;
+  width: 6vw;
+  border: none;
+  background-color: white;
+  margin-right: 3vw;
+}
+
+#logout:hover{
+  color: var(--secundary-color);
+  background-color: var(--primary-color);
 }
 
 @keyframes color-change {

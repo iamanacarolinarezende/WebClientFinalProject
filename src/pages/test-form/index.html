@@ -11,18 +11,23 @@
         <link rel="stylesheet" href="./style.css">
         <!--Importing the script-->
         <script src="./script.js"></script>
+        <script src="../../scripts/main.js"></script>
 
     </head>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../../../Index.html">Home</a></li>
-                <li><a href="../login/index.html">Login</a></li>
-                <li><a href="../about-us/index.html">About Us</a></li>
-            </ul>
-        </nav>
-    </header>
     <body onload="loadNextQuestion()">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../../../Index.html">Home</a></li>
+                    <li><a href="../about-us/index.html">About Us</a></li>
+                    <li><a id="login-button" href="../login/index.html" >Login</a></li>
+                </ul>
+                <div>
+                    <span id="user-name"></span>
+                    <button id="logout" onclick="handleLogout()" style="visibility: hidden;">Logout</button>
+                </div>
+            </nav>
+        </header>
         <!--Question Container-->
         <div class="question-container">
             <!--Question Text-->
